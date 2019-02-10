@@ -18,3 +18,4 @@ Route::get('/search','BookController@search');
 Route::get('/book','BookController@show');
 Route::get('/discount','BookController@getDiscountPriceForm');
 Route::get('/discountpercent','BookController@getDiscountPricePercent');
+Route::get('/discountbaht','BookController@getDiscountPriceBaht');

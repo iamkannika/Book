@@ -116,13 +116,13 @@ class BookController extends Controller
     }
 
 
-    public function getDiscountPriceForm(Request $request_discount)
+    public function getDiscountPriceForm(Request $request)
     {
-        //return $request_discount->all();
-        $id = $request_discount->id;
-        $name = $request_discount->name;
-        $writer = $request_discount->writer;
-        $price = $request_discount->price;
+        //return $request->all();
+        $id = $request->id;
+        $name = $request->name;
+        $writer = $request->writer;
+        $price = $request->price;
 
         return view('discountbook', [
             'id' => $id,
@@ -134,20 +134,26 @@ class BookController extends Controller
 
     }
 
-    public function getDiscountPricePercent(Request $request_percent)
+    public function getDiscountPricePercent(Request $request)
     {
-        //return $request_percent->all();
-        $id = $request_percent->id;
-        $name = $request_percent->name;
-        $writer = $request_percent->writer;
-        $price = $request_percent->price;
+        //return $request->all();
+        $id = $request->id;
+        $name = $request->name;
+        $writer = $request->writer;
+        $price = $request->price;
 
-        $discount = $request_percent->priceofdiscount;
+        $discount = $request->priceofdiscount;
+        $type = $request->typeDiscount;
+         //return $type;
         $discounted_price = 0;
         foreach ($this->info as $key => $value) {
             foreach ($value as $key2 => $value2) {
                 if ($key2 == 'id' && $value2 == $id) {
-                    $discounted_price = $value['price'] - ($value['price'] * ($discount / 100));
+                    if($type=='percent') {
+                        $discounted_price = $value['price'] - ($value['price'] * ($discount / 100));
+                    }else{
+                        $discounted_price = $value['price'] -$discount;
+                    }
                 }
             }
         }
@@ -159,6 +165,32 @@ class BookController extends Controller
             'discounted_price' => $discounted_price
         ]);
     }
+
+//    public function getDiscountPriceBaht(Request $request_baht)
+//        return $request_percent->all();
+//        $id = $request_baht->id;
+//        $name = $request_baht->name;
+//        $writer = $request_baht->writer;
+//        $price = $request_baht->price;
+//
+//        $discount = $request_baht->priceofdiscount;
+//        $discounted_price = 0;
+//        foreach ($this->info as $key => $value) {
+//            foreach ($value as $key2 => $value2) {
+//                if ($key2 == 'id' && $value2 == $id) {
+//                    $discounted_price = $value['price'] -$discount;
+//                }
+//            }
+//        }
+//        return view('discountbook', [
+//            'id' => $id,
+//            'name' => $name,
+//            'price' => $price,
+//            'writer' => $writer,
+//            'discounted_price' => $discounted_price
+//        ]);
+
+
 
 
 }

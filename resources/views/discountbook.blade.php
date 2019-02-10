@@ -10,8 +10,8 @@
 
         Type:
         <select name="typeDiscount">
-            <option value="baht">Baht</option>
             <option value="percent">Percent</option>
+            <option value="baht">Baht</option>
         </select><br>
 
         Discount:<input type="number" name="priceofdiscount"> <br>
