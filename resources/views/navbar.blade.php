@@ -149,62 +149,32 @@
         -webkit-animation-duration: 1s;
         visibility: visible;
     }
-    @keyframes slide {
-        0% {
-            opacity: 0;
-            transform: translateY(70%);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0%);
-        }
-    }
-    @-webkit-keyframes slide {
-        0% {
-            opacity: 0;
-            -webkit-transform: translateY(70%);
-        }
-        100% {
-            opacity: 1;
-            -webkit-transform: translateY(0%);
-        }
-    }
-    @media screen and (max-width: 768px) {
-        .col-sm-4 {
-            text-align: center;
-            margin: 25px 0;
-        }
-        .btn-lg {
-            width: 100%;
-            margin-bottom: 35px;
-        }
-    }
-    @media screen and (max-width: 480px) {
-        .logo {
-            font-size: 150px;
-        }
-    }
+
+
 </style>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Book</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="nav-link" href="/search">Search <span class="sr-only">(current)</span></a></li>
+                <li><a class="nav-link" href="/list">List</a></li>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Book</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            {{--<li class="nav-item active">--}}
-              <a class="nav-link" href="/search">Search <span class="sr-only">(current)</span></a>
-            {{--</li>--}}
-            {{--<li class="nav-item">--}}
-              <a class="nav-link" href="/list">List</a>
-            {{--</li>--}}
             </ul>
-        </div> 
+        </div>
+    </div>
 </nav>
 
 <div class="jumbotron text-center">
     <h1>BOOK</h1>
     <p>We are the Engineer Team from Globish </p>
 </div>
+
+

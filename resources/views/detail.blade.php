@@ -10,6 +10,7 @@
 <div class="container">
 
     <div class="card">
+
         <div class="card-block">
             {{--<h1 class="card-title">Detail</h1>--}}
             <p><b>ID:</b> {{$book->id}}</p>
