@@ -80,7 +80,7 @@ class BookController extends Controller
         // return $request->all();
         $id = $request->bookId;
         $booklist = $this->info;
-        $nameFromSearch = $request->bookname;
+        // $nameFromSearch = $request->bookname;
         $bookSearchResult = [];
 
         foreach ($booklist as $key => $value) {
@@ -91,24 +91,14 @@ class BookController extends Controller
             //   "writer"=>"Ryun Brunone",
             //   "price"=>555
             // ]
-            if ($id == $value['id']) {
-                $bookSearchResult[] = [
-                    'id' => $value['id'],
-                    'name' => $value['name'],
-                    'writer' => $value['writer'],
-                    'price' => $value['price']
-                ];
+            if ($id == $value['id'] || $id == $value['name']) {
+                $bookSearchResult[] = $value;
 
-            } elseif ($nameFromSearch == $value['name']) {
-                $bookSearchResult[] = [
-                    'id' => $value['id'],
-                    'name' => $value['name'],
-                    'writer' => $value['writer'],
-                    'price' => $value['price']
-                ];
+            //} elseif ($nameFromSearch == $value['name']) {
+               // $bookSearchResult[] = $value;
             }
         }
-
+        return $id;
         return view('showbook', [
             'booklist' => $booklist,
             'results' => $bookSearchResult

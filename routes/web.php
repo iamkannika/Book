@@ -12,10 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-Route::get('/search','BookController@search');
-Route::get('/book','BookController@show');
-Route::get('/discount','BookController@getDiscountPriceForm');
-Route::get('/discountpercent','BookController@getDiscountPricePercent');
-Route::get('/discountbaht','BookController@getDiscountPriceBaht');
+Route::get('/search',function(){
+    return view('search');
+});
+Route::get('/list',function(){
+    return view('list');
+});
+Route::post('/search-detail','InfoBookController@searchDetail')->name('search.detail');
+Route::post('/search-sale','InfoBookController@discount')->name('search.sale');
+Route::get('/bill','InfoBookController@sale');
+
+
+// Route::get('/search','BookController@search');
+// Route::get('/book','BookController@show');
+// Route::get('/discount','BookController@getDiscountPriceForm');
+// Route::get('/discountpercent','BookController@getDiscountPricePercent');
+// Route::get('/discountbaht','BookController@getDiscountPriceBaht');

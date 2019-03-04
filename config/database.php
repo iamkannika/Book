@@ -42,7 +42,8 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'localhost'),
+            'unix_socket'   => '/Users/kannika/.bitnami/stackman/machines/xampp/volumes/root/var/mysql/mysql.sock',
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'BookLaravelDb'),
             'username' => env('DB_USERNAME', 'root'),
