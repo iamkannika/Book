@@ -1,10 +1,4 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 
 <style>
     body {
@@ -31,6 +25,7 @@
         color: #fff;
         padding: 100px 25px;
         font-family: Montserrat, sans-serif;
+        border-radius: 0px ;
     }
     .container-fluid {
         padding: 60px 50px;
@@ -150,27 +145,30 @@
         visibility: visible;
     }
 
-
 </style>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Book</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a class="nav-link" href="/search">Search <span class="sr-only">(current)</span></a></li>
-                <li><a class="nav-link" href="/list">List</a></li>
 
-            </ul>
-        </div>
+<nav class="navbar navbar-expand navbar-dark" style="background-color: #f4511e;">
+
+    <div class="container">
+        <a class="navbar-brand" href="/">Book</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/search">Search</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/list">List</a>
+            </li>
+        </ul>
+    </div>
+    </div>
     </div>
 </nav>
+
 
 <div class="jumbotron text-center">
     <h1>BOOK</h1>

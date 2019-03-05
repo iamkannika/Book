@@ -75,4 +75,12 @@ class InfoBookController extends Controller
         }
 
     }
+
+    public function list(){
+        $lists = InfoBook::all();
+//        dd($list);
+        return view('list',[
+            'lists'=>$lists
+        ]);
+    }
 }

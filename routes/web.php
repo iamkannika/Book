@@ -17,9 +17,9 @@ Route::get('/', function () {
 Route::get('/search',function(){
     return view('search');
 });
-Route::get('/list',function(){
-    return view('list');
-});
+Route::get('/list','InfoBookController@list');
+
+
 Route::post('/search-detail','InfoBookController@searchDetail')->name('search.detail');
 Route::post('/search-sale','InfoBookController@discount')->name('search.sale');
 Route::get('/bill','InfoBookController@sale');

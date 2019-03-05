@@ -8,18 +8,17 @@
 </div>
 <hr>
 <div class="container">
-
     <div class="card">
+        <div class="card-body">
 
-        <div class="card-block">
-            {{--<h1 class="card-title">Detail</h1>--}}
             <p><b>ID:</b> {{$book->id}}</p>
             <p><b>Name:</b> {{$book->a}}</p>
             <p><b>Writer:</b>{{$book->name}}</p>
             <p><b>Price:</b>{{$book->price}} THB</p>
-        </h1>
+
     </div>
 <hr>
+
 <form action="{{route('search.sale')}}" method="post">
     {{ csrf_field() }}
     <input type="hidden" value="{{$book->id}}" name="bookId">
